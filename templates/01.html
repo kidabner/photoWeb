@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .image{
+            background-color: black;
+            width: 200px;
+            height: 260px;
+            margin: 20px;
+        }
+        .group{
+            width: 960px;
+            display: flex;
+            justify-content: left;
+        }
+    </style>
+</head>
+<body>
+    <div align="center">
+        <form method="POST" action="" enctype="multipart/form-data">
+            <p><input type="file" name="file"></p>
+            <p><input type="submit" value="Submit"></p>
+        </form>
+    </div>
+    <div align="center" style="padding: 50px;">
+        {% for g1 in groupList%}
+            <div class="group">
+                {%for i in g1%}
+                    <img src="{{i}}" class="image" />
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+    
+    
+    
+</body>
+</html>
